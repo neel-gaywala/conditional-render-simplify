@@ -1,9 +1,11 @@
 {
   "name": "conditional-render-simplify",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "author": "Neel Gaywala",
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -42,5 +44,18 @@
   },
   "peerDependencies": {
     "react": "^16.x || ^17.x || ^18.x"
-  }
+  },
+  "keywords": [
+    "react",
+    "render",
+    "if",
+    "else",
+    "if-else",
+    "conditional",
+    "rendering",
+    "helper",
+    "component",
+    "simple",
+    "simplify"
+  ]
 }

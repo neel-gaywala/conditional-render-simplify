@@ -1,3 +1,4 @@
+"use strict";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -9,31 +10,35 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import returnElement from "../Element";
-import returnElements from "../Elements";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Element_1 = __importDefault(require("../Element"));
+const Elements_1 = __importDefault(require("../Elements"));
 /**
  * @param {string | object} Condition to render block, either `string` or `object`
  * @param {boolean} multiple return multiple block for type `object`, default to false
  *
  */
 function Simplify(_a) {
-    var conditions = _a.conditions, _b = _a.multiple, multiple = _b === void 0 ? false : _b, rest = __rest(_a, ["conditions", "multiple"]);
+    var { conditions, multiple = false } = _a, rest = __rest(_a, ["conditions", "multiple"]);
     if (typeof conditions === "string") {
-        var stringProp = conditions.trim();
-        return returnElement(rest[stringProp]);
+        const stringProp = conditions.trim();
+        return (0, Element_1.default)(rest[stringProp]);
     }
     if (typeof conditions === "object") {
         if (multiple) {
-            var stringsProp = Object.keys(conditions).filter(function (k) { return !!conditions[k]; });
-            return returnElements(rest, stringsProp);
+            const stringsProp = Object.keys(conditions).filter((k) => !!conditions[k]);
+            return (0, Elements_1.default)(rest, stringsProp);
         }
         else {
-            var stringProp = Object.keys(conditions).find(function (k) { return !!conditions[k]; });
+            const stringProp = Object.keys(conditions).find((k) => !!conditions[k]);
             if (stringProp) {
-                return returnElement(rest[stringProp]);
+                return (0, Element_1.default)(rest[stringProp]);
             }
         }
     }
     return null;
 }
-export default Simplify;
+exports.default = Simplify;

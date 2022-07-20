@@ -1,8 +1,13 @@
-import React from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
 function returnElement(element) {
-    if (React.isValidElement(element)) {
+    if (react_1.default.isValidElement(element)) {
         return element;
     }
     return null;
 }
-export default returnElement;
+exports.default = returnElement;

@@ -1,3 +1,4 @@
+"use strict";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -9,7 +10,11 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import returnElement from "../Element";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const Element_1 = __importDefault(require("../Element"));
 /**
  * If (`condition` is true) {
  *
@@ -23,10 +28,10 @@ import returnElement from "../Element";
  *
  */
 function If(_a) {
-    var condition = _a.condition, rest = __rest(_a, ["condition"]);
+    var { condition } = _a, rest = __rest(_a, ["condition"]);
     if (condition) {
-        return returnElement(rest["true"]);
+        return (0, Element_1.default)(rest["true"]);
     }
-    return returnElement(rest["false"]);
+    return (0, Element_1.default)(rest["false"]);
 }
-export default If;
+exports.default = If;
