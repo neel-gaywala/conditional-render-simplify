@@ -183,3 +183,15 @@ const Bar = ({ name, age, drinkingAge }) => (
   </div>
 );
 ```
+
+## Version
+
+Latest version,
+
+```
+$ npm install conditional-render-simplify
+```
+
+```
+$ yarn add conditional-render-simplify
+```
