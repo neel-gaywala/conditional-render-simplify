@@ -1,13 +1,17 @@
-import PropTypes from "prop-types";
 import returnElement from "../Element";
 import returnElements from "../Elements";
+import { Element, SimplifyProps } from "../types";
 
 /**
  * @param {string | object} Condition to render block, either `string` or `object`
  * @param {boolean} multiple return multiple block for type `object`, default to false
  *
  */
-function Simplify({ conditions, multiple = false, ...rest }) {
+function Simplify({
+  conditions,
+  multiple = false,
+  ...rest
+}: SimplifyProps): Element {
   if (typeof conditions === "string") {
     const stringProp = conditions.trim();
     return returnElement(rest[stringProp]);
@@ -21,7 +25,9 @@ function Simplify({ conditions, multiple = false, ...rest }) {
       return returnElements(rest, stringsProp);
     } else {
       const stringProp = Object.keys(conditions).find((k) => !!conditions[k]);
-      return returnElement(rest[stringProp]);
+      if (stringProp) {
+        return returnElement(rest[stringProp]);
+      }
     }
   }
 
@@ -29,8 +35,3 @@ function Simplify({ conditions, multiple = false, ...rest }) {
 }
 
 export default Simplify;
-
-Simplify.propTypes = {
-  conditions: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  multiple: PropTypes.bool,
-};

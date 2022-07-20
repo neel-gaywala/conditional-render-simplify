@@ -1,16 +1,15 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _Element = _interopRequireDefault(require("../Element"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+import returnElement from "../Element";
 /**
  * If (`condition` is true) {
  *
@@ -23,20 +22,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * }
  *
  */
-function If(props) {
-  var condition = props.condition;
-
-  if (condition) {
-    return (0, _Element.default)(props["true"]);
-  }
-
-  return (0, _Element.default)(props["false"]);
+function If(_a) {
+    var condition = _a.condition, rest = __rest(_a, ["condition"]);
+    if (condition) {
+        return returnElement(rest["true"]);
+    }
+    return returnElement(rest["false"]);
 }
-
-var _default = If;
-exports.default = _default;
-If.propTypes = {
-  condition: _propTypes.default.bool,
-  true: _propTypes.default.element,
-  false: _propTypes.default.element
-};
+export default If;
