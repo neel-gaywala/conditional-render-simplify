@@ -1,6 +1,6 @@
 import returnElement from "../Element";
 import returnElements from "../Elements";
-import { Element, SimplifyProps } from "../types";
+import { ConditionObject, Element, SimplifyProps } from "../types";
 
 /**
  * @param {string | object} Condition to render block, either `string` or `object`
@@ -20,11 +20,13 @@ function Simplify({
   if (typeof conditions === "object") {
     if (multiple) {
       const stringsProp = Object.keys(conditions).filter(
-        (k) => !!conditions[k]
+        (k: keyof ConditionObject) => !!conditions[k]
       );
       return returnElements(rest, stringsProp);
     } else {
-      const stringProp = Object.keys(conditions).find((k) => !!conditions[k]);
+      const stringProp = Object.keys(conditions).find(
+        (k: keyof ConditionObject) => !!conditions[k]
+      );
       if (stringProp) {
         return returnElement(rest[stringProp]);
       }

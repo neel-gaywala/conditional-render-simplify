@@ -8,9 +8,14 @@ export type Elements = {
 
 export type ElementNames = string[];
 
+export type ConditionObject = {
+  [key: string]: boolean;
+};
+
 export type SimplifyProps = {
-  conditions: string | object;
-  multiple: boolean;
+  conditions: string | ConditionObject;
+  multiple?: boolean;
+  [key: string]: any;
 };
 
 export type IfProps = {
