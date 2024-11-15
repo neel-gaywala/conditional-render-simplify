@@ -23,3 +23,13 @@ export type IfProps = {
   true?: Element;
   false?: Element;
 };
+
+export type ResponsiveConditionObject = {
+  [key: string]: number;
+};
+
+export type ResponsiveProps = {
+  breakpoints: ResponsiveConditionObject;
+  defaultLayout: Element;
+  [key: string]: any;
+};

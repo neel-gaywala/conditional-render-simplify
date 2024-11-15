@@ -8,24 +8,6 @@ Render React components conditionally.
 
 Take a look at the following presentational component, which contains a commonly used pattern for conditional rendering:
 
-```jsx
-const Greeting = ({ isAuthenticated, isAdmin, name }) => (
-  <div>
-    <Header />
-    {isAuthenticated ? (
-      isAdmin ? (
-        <span className="foo">Welcome back, Admin!</span>
-      ) : (
-        <span className="foo">Welcome back, {name}!</span>
-      )
-    ) : (
-      <span className="foo">Welcome, Sign Up Now!</span>
-    )}
-    <Footer />
-  </div>
-);
-```
-
 With Simplify you can rewrite this into a more readable, reusable and expressive format:
 
 ```jsx
@@ -60,6 +42,30 @@ const Greeting = ({ isAuthenticated, isAdmin, name }) => (
       viewer={<SignupNow />}
     />
     <Footer />
+  </div>
+);
+```
+
+<br />
+
+## What does `Responsive` component do?
+
+The `Responsive` component dynamically renders elements based on screen breakpoints. It is designed to help you implement responsive designs based on mobile-first approach.
+
+```jsx
+const App = () => (
+  <div>
+    <Responsive
+      breakpoints={{
+        bigDesktop: 1440,
+        desktop: 1024,
+        tablet: 768,
+      }}
+      bigDesktop={<div>Big Desktop View</div>}
+      desktop={<div>Desktop View</div>}
+      tablet={<div>Tablet View</div>}
+      defaultLayout={<div>Mobile View</div>}
+    />
   </div>
 );
 ```
@@ -106,6 +112,15 @@ const Bar = ({ name, age, drinkingAge }) => (
 | ---------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | conditions | undefined | conditions can be `string` or `object`,<br /> 1. If conditions `string` is passed, then prop with that name will be rendered. <br /> 2. If conditions `object` is passed, then first key with value `true` will be rendered, otherwise will return `null`. |
 | multiple   | false     | If conditions are in `object` and multiple is `true` then all key with value `true` will be rendered, otherwise first key with value `true` will be rendered.                                                                                              |
+
+<br />
+
+## Responsive Component
+
+| Props         | Default   | Detail                                                         |
+| ------------- | --------- | -------------------------------------------------------------- |
+| breakpoints   | undefined | Object defining breakpoints                                    |
+| defaultLayout | null      | A fallback layout to render, this can be a mobile-first layout |
 
 <br />
 

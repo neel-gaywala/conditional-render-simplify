@@ -1,3 +1,4 @@
 import Simplify from "./Simplify";
 import If from "./If";
-export { Simplify, If };
+import Responsive from "./Responsive";
+export { Simplify, If, Responsive };

@@ -17,3 +17,11 @@ export declare type IfProps = {
     true?: Element;
     false?: Element;
 };
+export declare type ResponsiveConditionObject = {
+    [key: string]: number;
+};
+export declare type ResponsiveProps = {
+    breakpoints: ResponsiveConditionObject;
+    defaultLayout: Element;
+    [key: string]: any;
+};
