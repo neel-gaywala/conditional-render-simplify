@@ -210,3 +210,14 @@ $ npm install conditional-render-simplify
 ```
 $ yarn add conditional-render-simplify
 ```
+
+## 🚀 Hire Me
+
+Looking for a skilled developer to bring your ideas to life? I specialize in building efficient and scalable solutions.
+
+## 📫 Contact Me:
+
+- [Email](mailto:neelgaywala72@gmail.com)
+- [Portfolio](https://neel-gaywala.vercel.app/)
+- [GitHub](https://github.com/neel-gaywala)
+- [LinkedIn](https://www.linkedin.com/in/neel-gaywala-283147116/)

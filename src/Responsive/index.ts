@@ -1,6 +1,6 @@
 import returnElement from "../Element";
 import { Element, ResponsiveProps, ResponsiveConditionObject } from "../types";
-import { useMediaQuery } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 /**
  * @param {object} breakpoints Object defining breakpoints to render each element

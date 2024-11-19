@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Element_1 = __importDefault(require("../Element"));
-const material_1 = require("@mui/material");
+const useMediaQuery_1 = __importDefault(require("@mui/material/useMediaQuery"));
 /**
  * @param {object} breakpoints Object defining breakpoints to render each element
  * @param {Element} defaultLayout A fallback layout to render, this can be a mobile-first layout
@@ -26,12 +26,12 @@ function Responsive(_a) {
     if (typeof breakpoints === "object") {
         let activeBreakpoint = "";
         const matchingBreakpoints = Object.keys(breakpoints).filter((k) => {
-            return (0, material_1.useMediaQuery)(`(min-width:${breakpoints[k]}px)`);
+            return (0, useMediaQuery_1.default)(`(min-width:${breakpoints[k]}px)`);
         });
         if (matchingBreakpoints.length) {
             activeBreakpoint = matchingBreakpoints.reduce((prev, curr) => breakpoints[curr] > breakpoints[prev] ? curr : prev);
         }
-        const isInView = (0, material_1.useMediaQuery)("(min-width:0px)");
+        const isInView = (0, useMediaQuery_1.default)("(min-width:0px)");
         if (isInView) {
             return (0, Element_1.default)(activeBreakpoint ? rest[activeBreakpoint] : defaultLayout);
         }
