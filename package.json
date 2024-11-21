@@ -1,6 +1,6 @@
 {
   "name": "conditional-render-simplify",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": false,
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -60,7 +60,9 @@
     "component",
     "simple",
     "simplify",
-    "responsive"
+    "responsive",
+    "mapping",
+    "list"
   ],
   "dependencies": {
     "@emotion/react": "^11.13.3",

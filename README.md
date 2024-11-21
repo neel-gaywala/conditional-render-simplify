@@ -72,6 +72,26 @@ const App = () => (
 
 <br />
 
+## What does `Mapping` component do?
+
+The `Mapping` component renders a list of items with support for fallback states.
+
+```jsx
+const App = () => (
+  <div>
+    <Mapping
+      data={listData} // [1, 2, 3]
+      renderItem={(item, index) => <Item key={index} item={item} />}
+      isLoading={isDataLoading}
+      fallbackEmpty={<p>{"No Data Available"}</p>}
+      fallbackLoading={<p>{"Loading..."}</p>}
+    />
+  </div>
+);
+```
+
+<br />
+
 ## What does `If` component do?
 
 Take a look at the following presentational component, which contains a commonly used pattern for conditional rendering:
@@ -121,6 +141,18 @@ const Bar = ({ name, age, drinkingAge }) => (
 | ------------- | --------- | -------------------------------------------------------------- |
 | breakpoints   | undefined | Object defining breakpoints                                    |
 | defaultLayout | null      | A fallback layout to render, this can be a mobile-first layout |
+
+<br />
+
+## Mapping Component
+
+| Props           | Default   | Detail                                           |
+| --------------- | --------- | ------------------------------------------------ |
+| data            |           | Array of items to be mapped                      |
+| renderItem      | undefined | Function to render each item in the `data` array |
+| isLoading       | false     | Flag to indicate if loading is in progress       |
+| fallbackEmpty   | null      | Element to render when `data` is empty           |
+| fallbackLoading | null      | Element to render during loading state           |
 
 <br />
 

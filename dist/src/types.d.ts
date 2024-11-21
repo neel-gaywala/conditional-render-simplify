@@ -25,3 +25,10 @@ export declare type ResponsiveProps = {
     defaultLayout: Element;
     [key: string]: any;
 };
+export interface MappingProps<T> {
+    data: T[] | undefined | null;
+    renderItem: (item: T, index: number) => Element;
+    isLoading?: boolean;
+    fallbackEmpty?: Element;
+    fallbackLoading?: Element;
+}
